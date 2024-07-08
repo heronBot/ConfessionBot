@@ -1,6 +1,7 @@
 import discord,random
 from keys import *
 from better_profanity import profanity
+import os
 
 
 intents = discord.Intents.default()
@@ -116,4 +117,4 @@ async def on_message(message):
 
     
 
-client.run("MTI1ODY1MTA4MDEwODI3Nzg1MQ.GlL4DX.MZCeby8aB1v3JxClGr6bWOVVnIvNErhHC-r4QE")
+client.run(os.getenv("tok"))
