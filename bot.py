@@ -113,7 +113,7 @@ async def on_message(message):
 
         await message.channel.send(embed=emb)
                 
-client.run(os.environ(tok)            
+client.run(os.environ(tok))            
 
     
 
