@@ -72,10 +72,7 @@ async def on_message(message):
         elif members[message.author.name].askPerson:
             if (message.content == 'channel'):
                 c = client.get_channel(1259926873065000981)
-                realSend = profanity.censor(members[message.author.name].toSend,censor_char="*")
-                f = open("confessions.txt",'a')
-                f.write(f"{message.author.name} to channel => {members[message.author.name].toSend}\n\n")
-                f.close() 
+                realSend = profanity.censor(members[message.author.name].toSend,censor_char="*") 
                 em = discord.Embed(title="Got a Confession",description=realSend)
                 await c.send(embed=em)
                 del members[message.author.name]
@@ -87,9 +84,6 @@ async def on_message(message):
                 await message.channel.send("No such User Found 😀. You may try again")
                 return
             realSend = profanity.censor(members[message.author.name].toSend,censor_char="*")
-            f = open("confessions.txt",'a')
-            f.write(f"{message.author.name} to {us.name} => {members[message.author.name].toSend}\n\n")
-            f.close()
             em = discord.Embed(title="heyy! I have got a confession for you!",description="Below is a confession from someone in the class! If you wish to block this user, you may block the person using !block.")
             em.add_field(name="Confession:",value=realSend)
             em.set_footer(text="Made by: pencil")
